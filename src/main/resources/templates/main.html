@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+    span {
+        display: inline-block;
+        width: 230px;
+        margin-top: 15px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+</style>
+<script>
+    window.onload = function () {
+        console.log(document.getElementById('request_form'))
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <title>RemotePay</title>
 </head>
 <body>
-    RemotePay Web Page
-
+    <span>RemotePay Web Page</span> <br>
+    <form id="request_form">
+        <span>Amount</span>
+        <input type="text" th:field="${pay.amount}" th:value="111"> <br/>
+        <span>taxAmount</span>
+        <input type="text" th:field="${pay.taxAmount}" th:value="222"> <br/>
+        <span>Service Amount</span>
+        <input type="text" th:field="${pay.serviceAmount}" th:value="333"> <br/>
+        <span>Phone</span>
+        <input type="text" th:field="${pay.phone}" th:value="444"> <br/>
+        <input type="submit">
+    </form>
 </body>
 </html>
