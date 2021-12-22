@@ -16,7 +16,8 @@
     function setPaymentInfo() {
         const id = document.getElementById("payment_id").value;
         // 추후 gateway 서버 설정 완료 시 url 변경
-        fetch("http://127.0.0.1:8090/payment/"+id)
+        fetch("http://127.0.0.1:8090/payment/"+id, {
+            mode: 'no-cors'})
         .then((res) => {console.log("res : " + res)})
     }
 </script>
